@@ -75,6 +75,7 @@ spec:
       args: ["/app/exec-python.sh"]
       env: 
 <<<<<<< HEAD
+<<<<<<< HEAD
         - name: AZURE_STORAGE_CONNECTION_STRING
           valueFrom:
             secretKeyRef:
@@ -85,6 +86,8 @@ spec:
         - name: BLOB_NAME
           value: {{ .Values.job.initContainers.azureStorage.blobName }}
 =======
+=======
+>>>>>>> flink-job-cluster-helm-chart
         - name: STORAGE_CONNECTION_STRING
           valueFrom:
             secretKeyRef:
@@ -94,7 +97,10 @@ spec:
           value: {{ .Values.job.initContainers.Storage.containerName }}
         - name: BLOB_NAME
           value: {{ .Values.job.initContainers.Storage.blobName }}
+<<<<<<< HEAD
 >>>>>>> upstream/master
+=======
+>>>>>>> flink-job-cluster-helm-chart
     {{- end }} 
     podAnnotations:
 {{- with .Values.podAnnotations }}

@@ -3,10 +3,14 @@ appVersion: "1.0"
 description: flinkjobcluster deployment
 name: flink-job-cluster
 <<<<<<< HEAD
+<<<<<<< HEAD
 version: 0.1.50
 =======
 version: 0.1.51
 >>>>>>> upstream/master
+=======
+version: 0.1.51
+>>>>>>> flink-job-cluster-helm-chart
 contributors:
 - name: javier moreno molina
   email: javier.moreno_molina@daimler.com

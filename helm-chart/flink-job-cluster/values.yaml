@@ -7,6 +7,7 @@ image:
 
 # Prometheus reporter jar to be loaded by flink
 <<<<<<< HEAD
+<<<<<<< HEAD
 # PROPERTIES_VOLUME path for custom properties file of the job to be executed
 envVars:
   - name: HADOOP_CLASSPATH
@@ -19,6 +20,11 @@ envVars:
   - name: HADOOP_CLASSPATH
     value: /opt/flink/opt/flink-metrics-prometheus-1.9.3.jar
 >>>>>>> upstream/master
+=======
+envVars:
+  - name: HADOOP_CLASSPATH
+    value: /opt/flink/opt/flink-metrics-prometheus-1.9.3.jar
+>>>>>>> flink-job-cluster-helm-chart
 
 jobManager:
   accessScope: Cluster
@@ -41,6 +47,7 @@ taskManager:
   replicas: 2
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   # config.properties to be mounted into flink taskManager
   config:
     properties:
@@ -52,6 +59,9 @@ taskManager:
 =======
   volumeMounts: {}
 >>>>>>> upstream/master
+=======
+  volumeMounts: {}
+>>>>>>> flink-job-cluster-helm-chart
 
 # enable metrics ports for taskManager
   metrics:
@@ -68,6 +78,7 @@ taskManager:
 
 job:
 <<<<<<< HEAD
+<<<<<<< HEAD
   # job will look for a JAR file at /JARFiles/<JAR_FILE> and execute it
   # className has to be valid and used in the provided JAR File
   jarFile: /JARfiles/JARfile.jar
@@ -76,11 +87,17 @@ job:
   # className has to be valid and used in the provided JAR File
   jarFile: ./examples/streaming/WordCount.jar 
 >>>>>>> upstream/master
+=======
+  # job will look for a JAR file at ./examples/streaming/WordCount.jar  and execute it
+  # className has to be valid and used in the provided JAR File
+  jarFile: ./examples/streaming/WordCount.jar 
+>>>>>>> flink-job-cluster-helm-chart
   className: org.apache.flink.streaming.examples.wordcount.WordCount
   args: ["--input", "./README.txt"]
   paralellism: 2
   restartPolicy: Never
   
+<<<<<<< HEAD
 <<<<<<< HEAD
   # Mount an EmptyDir so the InitContainer can store its JarFile in the specific path for the job to execute
   #volumes:
@@ -97,6 +114,8 @@ job:
     enabled: false
 #    image: <registry>/python-flink
 =======
+=======
+>>>>>>> flink-job-cluster-helm-chart
   # Mount an EmptyDir so the InitContainer can store its JarFile in the specific path for the job to execute, only needed when initContainer is enabled.
   #volumes:
   #  - name: properties
@@ -108,22 +127,31 @@ job:
   initContainers:
     enabled: false
 #    image: <registry>/<container_name>
+<<<<<<< HEAD
 >>>>>>> upstream/master
+=======
+>>>>>>> flink-job-cluster-helm-chart
 #    tag: "1.0"
 #    command: ["/bin/sh","-c","--"]
 #    args: ["/app/exec-python.sh"]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # azureStorage:
     # Provide the secret name, in which the azure storage account connection string is stored
 #    secretName: azure-storage-account-connectstr
 =======
+=======
+>>>>>>> flink-job-cluster-helm-chart
 # You can use the following setup to download the remote jar from e.g. a blob-storage. The below fields then have to be adjusted according to your blob-storage.
 
     # Storage:
     # Provide the secret name, in which the storage connection-string is stored
 #    secretName: storage-connectstr
+<<<<<<< HEAD
 >>>>>>> upstream/master
+=======
+>>>>>>> flink-job-cluster-helm-chart
 #    secretNameKey: connectstr
     # Provide the container name, from which a blob should be downloaded by the InitContainer
 #    containerName: snapshot
@@ -141,18 +169,24 @@ flinkProperties:
 ## Extra Annotations to be added to pod
 podAnnotations: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   fluentbit.io/parser: dummy
 
 ## Enable podMonitor for metrics
 podMonitor:
   enabled: true
 =======
+=======
+>>>>>>> flink-job-cluster-helm-chart
   fluentbit.io/parser: foo 
 
 ## Enable podMonitor for metrics - you need the Prometheus-Operator and its CRDs up and running in order to use PodMonitor. 
 podMonitor:
   enabled: false
+<<<<<<< HEAD
 >>>>>>> upstream/master
+=======
+>>>>>>> flink-job-cluster-helm-chart
   podTargetLabels:
     - cluster
     - component
